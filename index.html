@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satpol PP Kabupaten Kotawaringin Barat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .animate-scroll {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 20s linear infinite;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Custom colors based on the logo */
+        .bg-satpol-blue {
+            background-color: #1a237e;
+        }
+
+        .text-satpol-blue {
+            color: #1a237e;
+        }
+
+        .border-satpol-blue {
+            border-color: #1a237e;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header & Navigasi -->
+    <header class="bg-satpol-blue text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Logo Updated to Official Satpol PP Logo provided -->
+                <img src="assets/images/logo.jpg.png" alt="Logo Satpol PP" class="h-14 w-auto drop-shadow-md">
+                <div class="border-l-2 border-yellow-500 pl-3">
+                    <h1 class="font-bold text-lg leading-tight uppercase tracking-tighter">Satuan Polisi Pamong Praja
+                    </h1>
+                    <p class="text-xs uppercase tracking-widest text-yellow-400 font-semibold">Kabupaten Kotawaringin
+                        Barat</p>
+                </div>
+            </div>
+
+            <nav class="hidden lg:flex space-x-6 font-medium text-xs uppercase tracking-wider">
+                <a href="#" onclick="showSection('beranda')" class="hover:text-yellow-400 transition py-2">Beranda</a>
+                <div class="relative group">
+                    <button class="hover:text-yellow-400 transition flex items-center py-2 uppercase">Profil <i
+                            class="fas fa-chevron-down ml-1 text-[10px]"></i></button>
+                    <div
+                        class="absolute hidden group-hover:block bg-white text-gray-800 mt-0 py-2 w-56 shadow-2xl rounded-b-md border-t-4 border-yellow-500">
+                        <a href="#" onclick="showSection('profil', 'sejarah')"
+                            class="block px-4 py-2 hover:bg-blue-50 transition">Sejarah</a>
+                        <a href="#" onclick="showSection('profil', 'lambang')"
+                            class="block px-4 py-2 hover:bg-blue-50 transition">Makna Lambang</a>
+                        <a href="#" onclick="showSection('profil', 'mars')"
+                            class="block px-4 py-2 hover:bg-blue-50 transition">Mars Satpol PP</a>
+                        <a href="#" onclick="showSection('profil', 'visimisi')"
+                            class="block px-4 py-2 hover:bg-blue-50 transition">Visi Misi</a>
+                        <a href="#" onclick="showSection('profil', 'struktur')"
+                            class="block px-4 py-2 hover:bg-blue-50 transition">Struktur Organisasi</a>
+                        <a href="#" onclick="showSection('profil', 'pancawirasatya')"
+                            class="block px-4 py-2 hover:bg-blue-50 transition">Panca Wira Satya Satpol PP</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="hover:text-yellow-400 transition flex items-center py-2 uppercase">Publikasi <i
+                            class="fas fa-chevron-down ml-1 text-[10px]"></i></button>
+                    <div
+                        class="absolute hidden group-hover:block bg-white text-gray-800 mt-0 py-2 w-56 shadow-2xl rounded-b-md border-t-4 border-yellow-500">
+                        <a href="https://drive.google.com/drive/folders/1AqIK6BOfmO6V0r5UBeUKb8oYmf6_8PCB?usp=sharing"
+                            onclick="showSection('publikasi', 'sop')"
+                            class="block px-4 py-2 hover:bg-blue-50 transition">SOP Trantibum</a>
+                        <a href="https://drive.google.com/drive/folders/1b_YwcnmX8H7Y3O8XALPHkfM7j6FMKN99?usp=sharing"
+                            onclick="showSection('publikasi', 'standar')"
+                            class="block px-4 py-2 hover:bg-blue-50 transition">Standar Pelayanan</a>
+                        <a href="assets/documents/RENSTRA RANHIR 2025-2029 fix.pdf"
+                            onclick="showSection('publikasi', 'renstra')"
+                            class="block px-4 py-2 hover:bg-blue-50 transition">RENSTRA</a>
+                        <a href="https://drive.google.com/drive/folders/1Vmz-jlTg3oZBbDc6RRhhXLJLjO0n737m?usp=sharing"
+                            onclick="showSection('publikasi', 'lkjip')"
+                            class="block px-4 py-2 hover:bg-blue-50 transition">LKJIP</a>
+                    </div>
+                </div>
+                <a href="#" onclick="showSection('berita')" class="hover:text-yellow-400 transition py-2">Berita</a>
+                <a href="#" onclick="showSection('produk-hukum')" class="hover:text-yellow-400 transition py-2">Produk
+                    Hukum</a>
+                <a href="#" onclick="showSection('galeri')" class="hover:text-yellow-400 transition py-2">Galeri</a>
+                <a href="#" onclick="showSection('kontak')" class="hover:text-yellow-400 transition py-2">Kontak</a>
+            </nav>
+            <button class="lg:hidden text-2xl" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="hidden lg:hidden bg-blue-900 border-t border-blue-800 shadow-inner">
+            <div class="px-4 py-4 flex flex-col space-y-4 text-sm">
+                <a href="#" onclick="showSection('beranda'); closeMobileMenu()"
+                    class="hover:text-yellow-400 transition uppercase font-medium">Beranda</a>
+
+                <div class="space-y-2">
+                    <div class="uppercase font-medium text-yellow-400 flex items-center justify-between cursor-pointer"
+                        onclick="toggleSubMenu('mobile-profil-menu')">
+                        <span>Profil</span>
+                        <i class="fas fa-chevron-down text-[10px]"></i>
+                    </div>
+                    <div id="mobile-profil-menu"
+                        class="hidden pl-4 flex-col space-y-3 text-xs mt-2 border-l border-blue-700">
+                        <a href="#" onclick="showSection('profil', 'sejarah'); closeMobileMenu()"
+                            class="block hover:text-yellow-400 transition">Sejarah</a>
+                        <a href="#" onclick="showSection('profil', 'lambang'); closeMobileMenu()"
+                            class="block hover:text-yellow-400 transition">Makna Lambang</a>
+                        <a href="#" onclick="showSection('profil', 'mars'); closeMobileMenu()"
+                            class="block hover:text-yellow-400 transition">Mars Satpol PP</a>
+                        <a href="#" onclick="showSection('profil', 'visimisi'); closeMobileMenu()"
+                            class="block hover:text-yellow-400 transition">Visi Misi</a>
+                        <a href="#" onclick="showSection('profil', 'struktur'); closeMobileMenu()"
+                            class="block hover:text-yellow-400 transition">Struktur Organisasi</a>
+                        <a href="#" onclick="showSection('profil', 'pancawirasatya'); closeMobileMenu()"
+                            class="block hover:text-yellow-400 transition">Panca Wira Satya Satpol PP</a>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="uppercase font-medium text-yellow-400 flex items-center justify-between cursor-pointer"
+                        onclick="toggleSubMenu('mobile-publikasi-menu')">
+                        <span>Publikasi</span>
+                        <i class="fas fa-chevron-down text-[10px]"></i>
+                    </div>
+                    <div id="mobile-publikasi-menu"
+                        class="hidden pl-4 flex-col space-y-3 text-xs mt-2 border-l border-blue-700">
+                        <a href="https://drive.google.com/drive/folders/1AqIK6BOfmO6V0r5UBeUKb8oYmf6_8PCB?usp=sharing"
+                            onclick="showSection('publikasi', 'sop'); closeMobileMenu()"
+                            class="block hover:text-yellow-400 transition">SOP Trantibum</a>
+                        <a href="https://drive.google.com/drive/folders/1b_YwcnmX8H7Y3O8XALPHkfM7j6FMKN99?usp=sharing"
+                            onclick="showSection('publikasi', 'standar'); closeMobileMenu()"
+                            class="block hover:text-yellow-400 transition">Standar Pelayanan</a>
+                        <a href="assets/documents/RENSTRA RANHIR 2025-2029 fix.pdf"
+                            onclick="showSection('publikasi', 'renstra'); closeMobileMenu()"
+                            class="block hover:text-yellow-400 transition">RENSTRA</a>
+                        <a href="https://drive.google.com/drive/folders/1Vmz-jlTg3oZBbDc6RRhhXLJLjO0n737m?usp=sharing"
+                            onclick="showSection('publikasi', 'lkjip'); closeMobileMenu()"
+                            class="block hover:text-yellow-400 transition">LKJIP</a>
+                    </div>
+                </div>
+
+                <a href="#" onclick="showSection('berita'); closeMobileMenu()"
+                    class="hover:text-yellow-400 transition uppercase font-medium">Berita</a>
+                <a href="#" onclick="showSection('produk-hukum'); closeMobileMenu()"
+                    class="hover:text-yellow-400 transition uppercase font-medium">Produk Hukum</a>
+                <a href="#" onclick="showSection('galeri'); closeMobileMenu()"
+                    class="hover:text-yellow-400 transition uppercase font-medium">Galeri</a>
+                <a href="#" onclick="showSection('kontak'); closeMobileMenu()"
+                    class="hover:text-yellow-400 transition uppercase font-medium">Kontak</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- News Ticker -->
+    <div class="bg-yellow-400 py-2 overflow-hidden border-b border-yellow-500 shadow-sm">
+        <div class="animate-scroll font-bold text-satpol-blue text-sm uppercase">
+            PENGUMUMAN: Satpol PP Kotawaringin Barat siaga 24 jam melalui SIPELAKSANA • Mari jaga ketertiban umum di
+            lingkungan masing-masing • Laporan pelanggaran perda dapat disampaikan melalui nomor layanan kami • Stop
+            minuman beralkohol dan aktivitas yang mengganggu masyarakat.
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-4 py-8 min-h-screen">
+
+        <!-- SECTION: BERANDA -->
+        <section id="beranda" class="tab-content active space-y-12">
+            <!-- Hero Section -->
+            <div
+                class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row items-stretch border border-gray-100">
+                <div class="flex-1 p-8 md:p-12 bg-gradient-to-br from-white to-blue-50">
+                    <div
+                        class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-4 uppercase tracking-widest">
+                        Halo Masyarakat KOBAR</div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-satpol-blue mb-6 uppercase leading-tight">
+                        Selamat Datang di Situs Resmi Satpol PP Kabupaten Kotawaringin Barat</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                        Kami hadir untuk memberikan pelayanan penegakan peraturan daerah yang tegas, humanis, dan
+                        profesional dalam rangka menciptakan ketertiban umum serta ketenteraman masyarakat.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="showSection('kontak')"
+                            class="px-6 py-3 bg-satpol-blue text-white rounded-lg font-bold shadow-lg hover:bg-blue-800 transition uppercase text-sm">Hubungi
+                            Kami</button>
+                        <button onclick="showSection('profil', 'visimisi')"
+                            class="px-6 py-3 border-2 border-satpol-blue text-satpol-blue rounded-lg font-bold hover:bg-blue-50 transition uppercase text-sm">Visi
+                            & Misi</button>
+                    </div>
+                </div>
+                <div class="w-full md:w-2/5 relative">
+                    <img src="assets/images/fotobersama.jpeg" alt="Petugas Satpol PP"
+                        class="h-full w-full object-cover">
+                    <div class="absolute inset-0 bg-blue-900 opacity-20"></div>
+                </div>
+            </div>
+
+            <!-- Tentang Kami Section -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <img src="assets/images/logo.jpg.png" class="h-16 mr-6" alt="Icon Satpol PP">
+                        <div>
+                            <h3 class="text-2xl font-black text-satpol-blue uppercase tracking-tight">TENTANG KAMI</h3>
+                            <p class="text-sm text-yellow-600 font-bold">PRAJA WIBAWA 1950</p>
+                        </div>
+                    </div>
+                    <p class="mb-6 font-bold text-gray-700 border-l-4 border-yellow-500 pl-4 py-1">Satuan Polisi Pamong
+                        Praja Kabupaten Kotawaringin Barat merupakan instansi pemerintah daerah yang bertanggung jawab
+                        terhadap:</p>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div class="flex items-center p-3 bg-blue-50 rounded-xl border border-blue-100">
+                            <i class="fas fa-balance-scale text-satpol-blue mr-4 text-xl"></i>
+                            <span>Penegakan Perda dan Perkada</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-xl border border-blue-100">
+                            <i class="fas fa-shield-alt text-satpol-blue mr-4 text-xl"></i>
+                            <span>Ketertiban Umum & Ketenteraman Masyarakat</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-xl border border-blue-100">
+                            <i class="fas fa-user-shield text-satpol-blue mr-4 text-xl"></i>
+                            <span>Perlindungan Masyarakat</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-xl border border-blue-100">
+                            <i class="fas fa-search-location text-satpol-blue mr-4 text-xl"></i>
+                            <span>Pembinaan Masyarakat</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 p-6 bg-satpol-blue text-white rounded-2xl italic text-center text-sm shadow-inner">
+                        "Kami berkomitmen untuk mewujudkan lingkungan yang tertib, aman, dan kondusif melalui pelayanan
+                        yang responsif, profesional, serta berorientasi pada kepentingan masyarakat."
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-satpol-blue uppercase flex items-center">
+                        <i class="fas fa-star text-yellow-500 mr-2"></i> Layanan Unggulan
+                    </h3>
+                    <!-- SIPELAKSANA -->
+                    <div
+                        class="bg-gradient-to-r from-yellow-400 to-yellow-500 p-6 rounded-2xl shadow-lg transform hover:-translate-y-1 transition border-b-4 border-yellow-700">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-bullhorn text-3xl text-satpol-blue"></i>
+                            <span
+                                class="bg-white text-yellow-600 text-[10px] font-black px-2 py-1 rounded">ONLINE</span>
+                        </div>
+                        <h4 class="text-xl font-black text-satpol-blue mb-1">SIPELAKSANA</h4>
+                        <p class="text-xs text-satpol-blue font-bold opacity-80 mb-4">Sistem Pengaduan dan Konsultasi
+                            Satuan Polisi Pamong Praja</p>
+                        <a href="https://wa.me/6281273243000" target="_blank"
+                            class="block text-center bg-satpol-blue text-white py-2 rounded-lg font-bold text-sm shadow-md">
+                            <i class="fas fa-phone-alt mr-2"></i> 0812-7324-3000
+                        </a>
+                    </div>
+                    <!-- GERAKAN MERESAH -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-md border-2 border-satpol-blue transform hover:-translate-y-1 transition">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4"><i
+                                    class="fas fa-users text-satpol-blue text-2xl"></i></div>
+                            <h4 class="text-lg font-black text-satpol-blue uppercase leading-none">Gerakan <br>Meresah
+                            </h4>
+                        </div>
+                        <p class="text-xs text-gray-500 font-medium">Mengawal Remaja Kabupaten Kotawaringin Barat Sadar
+                            Hukum</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panduan Section -->
+            <div class="bg-gray-800 text-white rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-yellow-500 rounded-full blur-[120px] opacity-20 -mr-32 -mt-32">
+                </div>
+                <div class="relative z-10 grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8 flex items-center">
+                            <span class="bg-yellow-500 w-2 h-8 mr-4 inline-block"></span> PANDUAN MASYARAKAT
+                        </h3>
+                        <p class="text-yellow-400 font-bold mb-6 italic uppercase tracking-wider text-sm">Apa yang harus
+                            dilakukan untuk menjaga ketertiban umum?</p>
+                        <ul class="space-y-4">
+                            <li
+                                class="flex items-start bg-gray-700 bg-opacity-50 p-4 rounded-xl border-l-4 border-yellow-500">
+                                <span
+                                    class="bg-yellow-500 text-gray-900 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-4 shrink-0 mt-1">1</span>
+                                <span class="text-sm">Patuhi Perda dan Perkada yang berlaku di Kabupaten Kotawaringin
+                                    Barat.</span>
+                            </li>
+                            <li
+                                class="flex items-start bg-gray-700 bg-opacity-50 p-4 rounded-xl border-l-4 border-yellow-500">
+                                <span
+                                    class="bg-yellow-500 text-gray-900 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-4 shrink-0 mt-1">2</span>
+                                <span class="text-sm">Jaga ketertiban dan kenyamanan lingkungan sekitar demi kebaikan
+                                    bersama.</span>
+                            </li>
+                            <li
+                                class="flex items-start bg-gray-700 bg-opacity-50 p-4 rounded-xl border-l-4 border-yellow-500">
+                                <span
+                                    class="bg-yellow-500 text-gray-900 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-4 shrink-0 mt-1">3</span>
+                                <span class="text-sm">Tidak melakukan aktivitas yang mengganggu ketertiban umum di
+                                    fasilitas publik.</span>
+                            </li>
+                            <li
+                                class="flex items-start bg-gray-700 bg-opacity-50 p-4 rounded-xl border-l-4 border-yellow-500">
+                                <span
+                                    class="bg-yellow-500 text-gray-900 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-4 shrink-0 mt-1">4</span>
+                                <span class="text-sm">Laporkan pelanggaran kepada petugas Satpol PP melalui layanan
+                                    SIPELAKSANA.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8 flex items-center">
+                            <span class="bg-blue-500 w-2 h-8 mr-4 inline-block"></span> TIPS KETERTIBAN LINGKUNGAN
+                        </h3>
+                        <div class="grid gap-4">
+                            <div
+                                class="flex items-center space-x-4 p-4 bg-white bg-opacity-5 rounded-2xl hover:bg-opacity-10 transition">
+                                <div class="bg-red-500 p-3 rounded-lg"><i class="fas fa-ban text-white"></i></div>
+                                <span class="text-sm font-medium">Tidak berjualan di trotoar, badan jalan, atau
+                                    fasilitas umum.</span>
+                            </div>
+                            <div
+                                class="flex items-center space-x-4 p-4 bg-white bg-opacity-5 rounded-2xl hover:bg-opacity-10 transition">
+                                <div class="bg-green-500 p-3 rounded-lg"><i class="fas fa-leaf text-white"></i></div>
+                                <span class="text-sm font-medium">Menjaga kebersihan dan tidak membuang sampah
+                                    sembarangan.</span>
+                            </div>
+                            <div
+                                class="flex items-center space-x-4 p-4 bg-white bg-opacity-5 rounded-2xl hover:bg-opacity-10 transition">
+                                <div class="bg-blue-500 p-3 rounded-lg"><i class="fas fa-handshake text-white"></i>
+                                </div>
+                                <span class="text-sm font-medium">Mendukung terciptanya lingkungan yang aman, tertib,
+                                    dan nyaman.</span>
+                            </div>
+                            <div
+                                class="flex items-center space-x-4 p-4 bg-white bg-opacity-5 rounded-2xl hover:bg-opacity-10 transition">
+                                <div class="bg-purple-500 p-3 rounded-lg"><i class="fas fa-user-friends text-white"></i>
+                                </div>
+                                <span class="text-sm font-medium">Saling menghargai privasi dan ketenangan warga
+                                    lainnya.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PROFIL -->
+        <section id="profil" class="tab-content space-y-8">
+            <h2
+                class="text-3xl font-black text-satpol-blue border-b-8 border-yellow-400 inline-block pb-2 mb-8 uppercase tracking-tighter">
+                Profil Satuan</h2>
+            <div id="profil-content" class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
+                <!-- Content will be injected by JavaScript -->
+            </div>
+        </section>
+
+        <!-- SECTION: BERITA -->
+        <section id="berita" class="tab-content space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-6 border-b-2 border-gray-100 pb-6">
+                <div>
+                    <h2 class="text-3xl font-black text-satpol-blue uppercase tracking-tighter">Berita & Kegiatan</h2>
+                    <p class="text-gray-500 font-medium">Update harian pelaksanaan tugas Satpol PP di lapangan.</p>
+                </div>
+                <div class="relative w-full md:w-96">
+                    <input type="text" placeholder="Cari berita atau pengumuman..."
+                        class="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-2xl shadow-sm focus:ring-4 focus:ring-blue-100 focus:border-satpol-blue outline-none transition">
+                    <i class="fas fa-search absolute left-5 top-4 text-gray-400"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" id="berita-grid">
+                <!-- 1 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/gerakanasri.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-satpol-blue text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                            Gotong Royong</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">10 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Ikuti Gerakan ASRI di Kelurahan
+                            Raja Seberang</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja Kabupaten
+                            Kotawaringin Barat berpartisipasi dalam kegiatan Gerakan Indonesia ASRI yang dilaksanakan di
+                            Kelurahan Raja Seberang...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-ikuti-gerakan-asri-di-kelurahan-raja-seberang"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+
+                <!-- 1 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/yustisi berita.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-satpol-blue text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                            Yustisi</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">10 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Gelar Perkara Tipiring Tindak
+                            Lanjut Giat Penindakan Yustisi</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja Kabupaten
+                            Kotawaringin Barat menindak tegas pelanggaran peredaran minuman keras ilegal melalui...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-gelar-perkara-tipiring-tindak-lanjut-giat-penindakan-yustisi"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/anakterlantar.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Pengamanan</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">09 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Respon Cepat, Satpol PP Kobar Antar Anak
+                            Terlantar ke Orang Tua</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satpol PP Kabupaten Kotawaringin Barat
+                            merespons cepat penemuan seorang anak terlantar dengan melakukan penanganan dan pengantaran
+                            kembali...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/respon-cepat-satpol-pp-kobar-antar-anak-terlantar-ke-orang-tua"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/pendataanlinmas.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Pendataan Linmas</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">09 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Perkuat Database Keamanan Desa
+                            Melalui Aplikasi SIM LInmas</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat (Kobar) melalui Bidang Perlindungan Masyarakat (Linmas)
+                            melaksanakan penguatan data dan koordinasi keamanan wilayah...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-perkuat-database-keamanan-desa-melalui-aplikasi-sim-linmas"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/pembinaanlinmas.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-satpol-blue text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                            Pembinaan</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">08 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Lakukan Pembinaan dan Pendataan
+                            Linmas di Tiga Desa</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satpol PP Kobar melalui Bidang Linmas
+                            melaksanakan pembinaan serta pendataan anggota Linmas sebagai upaya peningkatan kapasitas
+                            dan validasi data...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-lakukan-pembinaan-dan-pendataan-linmas-di-tiga-desa"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/monitoring.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Monitoring</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">08 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Monitoring Ketertiban Umum di
+                            Desa Pesisir Kecamatan Kumai</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satpol PP Kobar melaksanakan monitoring dan
+                            evaluasi ketertiban umum sebagai upaya menjaga kondusivitas wilayah...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-monitoring-ketertiban-umum-di-desa-pesisir-kecamatan-kumai"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/pklrssi.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-satpol-blue text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                            Penertiban</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">08 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Tertibkan PKL di Depan RSSI
+                            hingga Pasar Indra Sari</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat (Kobar) melaksanakan penertiban Pedagang Kaki Lima (PKL)
+                            sekaligus penataan pedagang di kawasan...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-tertibkan-pkl-di-depan-rssi-hingga-pasar-indra-sari"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/odgj.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Pengamanan</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">07 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP, Dinsos dan Damkar Evakuasi ODGJ di
+                            Rumah Singgah Dinsos</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat bersama Dinas Sosial dan Dinas Pemadam Kebakaran (Damkar)
+                            melakukan pengamanan terhadap seorang Orang Dengan Gangguan Jiwa...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-dinsos-dan-damkar-evakuasi-odgj-di-rumah-singgah-dinsos"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/gerakanmeresah1.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Gerakan Meresah</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">06 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Goes To School, Ajak Siswa SMA
+                            Negeri 3 dan SMK Putra Jadi Pelopor Sadar Hukum</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat melaksanakan program “Satpol PP Goes To School” di SMA Negeri 3
+                            Pangkalan Bun dan SMK Putra pada...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-goes-to-school-ajak-siswa-sma-negeri-3-dan-smk-putra-jadi-pelopor-sadar-hukum-"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/yustisi2.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Yustisi</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">02 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Gelar Sidang Tipiring Kasus
+                            Minuman Keras</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat (Kobar) menindaklanjuti hasil operasi minuman keras (miras)
+                            ilegal dengan melaksanakan sidang tindak pidana ringan...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-gelar-sidang-tipiring-kasus-minuman-keras"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/odgjberita.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Pengamanan</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">02 APRIL 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Resahkan Warga, Satpol PP Kobar Amankan ODGJ di
+                            Kawasan Bundaran Pancasila</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat (Kobar) mengamankan seorang Orang Dengan Gangguan Jiwa (ODGJ)
+                            di kawasan Bundaran Pancasila, Pangkalan Bun...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/resahkan-warga-satpol-pp-kobar-amankan-odgj-di-kawasan-bundaran-pancasila"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/miraspt2.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Yustisi</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">31 MARET 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Razia Miras, Satpol PP Kobar Sita Ratusan Botol
+                            Minuman Beralkohol</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3"> Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat (Kobar) mengamankan sebanyak 225 botol minuman keras (miras)
+                            ilegal dalam operasi penegakan Peraturan Daerah yang...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/razia-miras-satpol-pp-kobar-sita-ratusan-botol-minuman-beralkohol"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/odgjpart2.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-satpol-blue text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                            Pengamanan</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">31 MARET 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Amankan ODGJ yang Resahkan Warga
+                            Perumahan Pinang Merah</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat (Kobar) dua kali mengamankan seorang Orang Dengan Gangguan Jiwa
+                            (ODGJ) yang meresahkan warga di kawasan Perumahan Pinang Merah...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-amankan-odgj-yang-resahkan-warga-perumahan-pinang-merah-"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/yustisipart3.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-satpol-blue text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                            Yustisi</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">26 MARET 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Tegakkan Perda, Satpol PP Kobar Intensifkan
+                            Penertiban Minuman Beralkohol</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat (Kobar) kembali menindak peredaran minuman beralkohol ilegal
+                            dengan mengamankan seorang warga serta menyita 20 kantong plastik berisi...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/tegakkan-perda-satpol-pp-kobar-intensifkan-penertiban-minuman-beralkohol"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/pklpart2.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-satpol-blue text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                            Penertiban</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">26 MARET 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Tertibkan PKL di Sejumlah Titik
+                            Kota Pangkalan Bun</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat (Kobar) melaksanakan patroli penegakan ketertiban umum dan
+                            ketenteraman masyarakat dengan menertibkan pedagang kaki lima...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-tertibkan-pkl-di-sejumlah-titik-kota-pangkalan-bun"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/ruaspkl.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Penertiban</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">26 MARET 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Tertibkan PKL di Sejumlah Ruas
+                            Jalan Protokol</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Satuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat (Kobar) menertibkan sejumlah Pedagang Kaki Lima (PKL) yang
+                            berjualan di atas trotoar dan badan jalan dalam kegiatan patroli...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-tertibkan-pkl-di-sejumlah-ruas-jalan-protokol"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/sosmiras.jpeg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Sosialisasi</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">24 MARET 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Sosialisasikan Edaran Bupati
+                            Terkait Larangan Miras dan Prostitusi</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">Dalam rangka menindaklanjuti Edaran Bupati
+                            Kotawaringin Barat tentang larangan peredaran minuman keras dan praktik prostitusi selama
+                            Bulan Suci Ramadhan, Satuan Polisi Pamong Praja ...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-sosialisasikan-edaran-bupati-terkait-larangan-miras-dan-prostitusi-"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/penataan.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-yellow-500 text-satpol-blue text-[10px] font-bold px-3 py-1 rounded-full">
+                            Peneriban</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-gray-400 text-xs font-bold mb-3">18 FEBRUARI 2026</div>
+                        <h4 class="text-lg font-black text-satpol-blue">Satpol PP Kobar Laksanakan Pengawasan dan
+                            Penataan PKL di Kawasan Pasar Udan Said</h4>
+                        <p class="text-gray-500 text-sm mt-3 line-clamp-3">atuan Polisi Pamong Praja (Satpol PP)
+                            Kabupaten Kotawaringin Barat (Kobar) melaksanakan kegiatan pengawasan terhadap Pedagang Kaki
+                            Lima (PKL) di kawasan Pasar...</p>
+                        <a href="https://mmc.kotawaringinbaratkab.go.id/berita/satpol-pp-kobar-laksanakan-pengawasan-dan-penataan-pkl-di-kawasan-pasar-udan-said"
+                            class="mt-4 inline-block text-satpol-blue font-bold text-xs">Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PRODUK HUKUM -->
+        <section id="produk-hukum" class="tab-content space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-4">
+                <div>
+                    <h2
+                        class="text-3xl font-black text-satpol-blue border-b-8 border-yellow-400 inline-block pb-2 uppercase tracking-tighter">
+                        Produk Hukum</h2>
+                </div>
+                <div class="relative w-full md:w-96">
+                    <input type="text" id="search-hukum" placeholder="Cari regulasi (cth: Perda, PKL, Miras)..."
+                        class="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-2xl shadow-sm focus:ring-4 focus:ring-blue-100 outline-none transition">
+                    <i class="fas fa-search absolute left-5 top-4 text-gray-400"></i>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-satpol-blue text-white uppercase text-[10px] tracking-[0.2em]">
+                            <tr>
+                                <th class="px-8 py-5">Nama Peraturan / Regulasi</th>
+                                <th class="px-8 py-5 text-center w-32">Tahun</th>
+                                <th class="px-8 py-5 text-center w-32">Berkas</th>
+                            </tr>
+                        </thead>
+                        <tbody id="hukum-table-body" class="divide-y text-sm">
+                            <tr class="hover:bg-blue-50 transition">
+                                <td class="px-8 py-6 font-bold text-gray-700">
+                                    Undang-Undang Nomor 23 Tahun 2014 Tentang Pemerintahan Daerah
+                                </td>
+
+                                <td class="px-8 py-6 text-center font-bold text-gray-400 tracking-wider">
+                                    2014
+                                </td>
+
+                                <td class="px-8 py-6 text-center">
+                                    <a href="assets/documents/UU Nomor 23 Tahun 2014 (1).pdf" target="_blank"
+                                        class="bg-blue-100 text-satpol-blue p-3 rounded-2xl hover:bg-satpol-blue hover:text-white transition shadow-sm inline-block">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-blue-50 transition">
+                                <td class="px-8 py-6 font-bold text-gray-700">
+                                    Peraturan Pemerintah Nomor 16 Tahun 2018 Tentang Satuan Polisi Pamong Praja
+                                </td>
+
+                                <td class="px-8 py-6 text-center font-bold text-gray-400 tracking-wider">
+                                    2018
+                                </td>
+                                <td class="px-8 py-6 text-center">
+                                    <a href="assets/documents/PP Nomor 16 Tahun 2018 (2).pdf" target="_blank"
+                                        class="bg-blue-100 text-satpol-blue p-3 rounded-2xl hover:bg-satpol-blue hover:text-white transition shadow-sm inline-block">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-blue-50 transition">
+                                <td class="px-8 py-6 font-bold text-gray-700">
+                                    Peraturan Bupati Nomor 96 Tahun 2022 Tentang Kedudukan, Susunan Organisasi, Tugas
+                                    dan Fungsi serta Tata Kerja Satuan Polisi Pamong Praja Kabupaten Kotawaringin Barat
+                                </td>
+                                <td class="px-8 py-6 text-center font-bold text-gray-400 tracking-wider">
+                                    2022
+                                </td>
+
+                                <td class="px-8 py-6 text-center">
+                                    <a href="assets/documents/Perbup Kobar No. 96 Tahun 2022.pdf" target="_blank"
+                                        class="bg-blue-100 text-satpol-blue p-3 rounded-2xl hover:bg-satpol-blue hover:text-white transition shadow-sm inline-block">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-blue-50 transition">
+                                <td class="px-8 py-6 font-bold text-gray-700">
+                                    Peraturan Daerah Kabupaten Kotawaringin Barat Nomor 16 Tahun 2014 Tentang Ketertiban
+                                    Umum dan Ketentraman Masyarakat
+                                </td>
+
+                                <td class="px-8 py-6 text-center font-bold text-gray-400 tracking-wider">
+                                    2014
+                                </td>
+
+                                <td class="px-8 py-6 text-center">
+                                    <a href="assets/documents/PERDA 16 TAHUN 2014 TT TRANTIBUM.pdf" target="_blank"
+                                        class="bg-blue-100 text-satpol-blue p-3 rounded-2xl hover:bg-satpol-blue hover:text-white transition shadow-sm inline-block">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-blue-50 transition">
+                                <td class="px-8 py-6 font-bold text-gray-700">
+                                    Peraturan Daerah Kabupaten Kotawaringin Barat Nomor 22 Tahun 2007 Tentang
+                                    Pengaturan, Penertiban dan Pengawasan Pedagang Kaki Lima
+                                </td>
+
+                                <td class="px-8 py-6 text-center font-bold text-gray-400 tracking-wider">
+                                    2007
+                                </td>
+
+                                <td class="px-8 py-6 text-center">
+                                    <a href="assets/documents/PERDA No 22 Th 2007 Tentang Pengaturan, Penertiban, dan Pengawasan PKL.pdf"
+                                        target="_blank"
+                                        class="bg-blue-100 text-satpol-blue p-3 rounded-2xl hover:bg-satpol-blue hover:text-white transition shadow-sm inline-block">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-blue-50 transition">
+                                <td class="px-8 py-6 font-bold text-gray-700">
+                                    Peraturan Daerah Kabupaten Kotawaringin Barat Nomor 13 Tahun 2006 Tentang Larangan
+                                    Minuman Beralkohol
+                                </td>
+
+                                <td class="px-8 py-6 text-center font-bold text-gray-400 tracking-wider">
+                                    2006
+                                </td>
+
+                                <td class="px-8 py-6 text-center">
+                                    <a href="assets/documents/Peraturan Daerah_Nomor_13_Tahun_2006.pdf" target="_blank"
+                                        class="bg-blue-100 text-satpol-blue p-3 rounded-2xl hover:bg-satpol-blue hover:text-white transition shadow-sm inline-block">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: GALERI -->
+        <section id="galeri" class="tab-content space-y-8">
+            <h2
+                class="text-3xl font-black text-satpol-blue border-b-8 border-yellow-400 inline-block pb-2 uppercase tracking-tighter">
+                Galeri Kegiatan</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Gallery items with descriptions -->
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/satpolpp.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Instansi</p>
+                        <p class="text-yellow-400 text-xs mt-2">Satuan Polisi Pamong Praja Kabupaten Kotawaringin Barat
+                        </p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/patroli.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Kegiatan Pengamanan</p>
+                        <p class="text-yellow-400 text-xs mt-2">POS NATARU</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/patroli2.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Tindakan Non Yustisi</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pemberian teguran mengenai Perda dan Perkada</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/patroli3.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">KEGIATAN PATROLI</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengawasan dan Penertiban PKL</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/patroli4.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">KEGIATAN PENGAMANAN</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengamanan Objek Vital di Rumah Jabatan Bupati</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/pkljeruk.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">KEGIATAN PATROLI</p>
+                        <p class="text-yellow-400 text-xs mt-2">Peneguran dan Pengawasan PKL</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/upacara.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">KEGIATAN PENGAMANAN</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengawasan Objek Vital pada Kegiatan Tabur Bunga</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/pamlari.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">KEGIATAN PENGAMANAN</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengamanan Fun Run 2025</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/hutkobar.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">UPACARA</p>
+                        <p class="text-yellow-400 text-xs mt-2">Upacara Perayaan HUT KOBAR</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/gtssma3.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Sosialisasi & Edukasi</p>
+                        <p class="text-yellow-400 text-xs mt-2">Gerakan Meresah di SMAN3 PANGKALANBUN</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/sosialisasipkl.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Sosialisasi</p>
+                        <p class="text-yellow-400 text-xs mt-2">Sosialisasi Perda dan Perkada kepada PKL</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/APD.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Kelengkapan APD</p>
+                        <p class="text-yellow-400 text-xs mt-2">Safety Morning Talk terkait penggunaan APD</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/gtssmkputra.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Sosialisasi & Edukasi</p>
+                        <p class="text-yellow-400 text-xs mt-2">Gerakan Meresah di SMK PUTRA PANGKALANBUN</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/penangananodgj.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengamanan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengamanan dan tindak lanjut ODGJ</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/raziamiras.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Yustisi</p>
+                        <p class="text-yellow-400 text-xs mt-2">Operasi Razia Miras</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/monitbinmas.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Monitoring</p>
+                        <p class="text-yellow-400 text-xs mt-2">Giat Monitoring Gangguan Trantibum</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/pemda1.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengamanan Objek Vital</p>
+                        <p class="text-yellow-400 text-xs mt-2">Piket Penjagaan Kantor Pemerintah Daerah</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/pamr5.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengamanan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Kolaborasi dengan instansi terkait Pengamanan Objek
+                            Vital</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/pklr5.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Patroli</p>
+                        <p class="text-yellow-400 text-xs mt-2">Patroli Peneguran dan Penertiban PKL</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/sosanakr5.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Sosialisasi</p>
+                        <p class="text-yellow-400 text-xs mt-2">Sosialisasi Perda dan Perkada kepada Remaja</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/pemwalmob.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengawalan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengawalan Kepala Daerah dan Wakil Kepala Daerah</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/pamwalkeg.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengawalan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pendampingan Bupati dalam acara Pasar Murah</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/sampah.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Tindakan Non Yustisi</p>
+                        <p class="text-yellow-400 text-xs mt-2">Peneguran Lisan kepada Masyarakat secara humanis</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/miraspart2.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Yustisi</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pembawaan Barang Bukti untuk Sidang di Pengadilan Negeri
+                        </p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/operasitelabang.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengamanan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengamanan Operasi Telabang bersama dengan instansi
+                            terkait</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/penataankota.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Penertiban</p>
+                        <p class="text-yellow-400 text-xs mt-2">Penataan dan Penertiban area trotoar dan bahu jalan</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/pammancing.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengamanan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengamanan Objek Vital pada perlombaan memancing</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/bagoyabpam.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengamanan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengamanan Objek Vital pada pasar Bagoyab Night</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/pamjalan.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengamanan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengamanan Perbaikan Jalan</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/kenakalanremaja.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengamanan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengamanan Kenakalan Remaja</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/pbg.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengawasan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengawasan Perizinan Bangunan</p>
+                    </div>
+                </div>
+                <div class="relative group h-72 rounded-3xl overflow-hidden shadow-lg border-4 border-white">
+                    <img src="assets/images/objekvital.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-125 transition duration-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-satpol-blue via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
+                        <p class="text-white text-sm font-black uppercase tracking-widest">Pengawasan</p>
+                        <p class="text-yellow-400 text-xs mt-2">Pengawasan Objek Vital area Pangkalan Bun Park pada
+                            malam hari</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: KONTAK -->
+        <section id="kontak" class="tab-content space-y-8">
+            <h2
+                class="text-3xl font-black text-satpol-blue border-b-8 border-yellow-400 inline-block pb-2 uppercase tracking-tighter">
+                Kontak & Lokasi</h2>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+                        <h3 class="text-xl font-black text-satpol-blue mb-6 flex items-center uppercase tracking-tight">
+                            <i class="fas fa-business-time mr-4 text-yellow-500"></i> Jam Layanan Publik
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                            <div class="space-y-4">
+                                <div class="p-4 bg-gray-50 rounded-2xl border-l-4 border-satpol-blue">
+                                    <p class="text-xs font-black uppercase text-gray-400 mb-1">Jam Kerja</p>
+                                    <p class="font-bold">Senin - Kamis: 07.30 - 16.00</p>
+                                    <p class="font-bold">Jumat: 07.30 - 16.30</p>
+                                </div>
+                                <div class="p-4 bg-gray-50 rounded-2xl border-l-4 border-yellow-500">
+                                    <p class="text-xs font-black uppercase text-gray-400 mb-1">Jam Istirahat</p>
+                                    <p class="font-bold">Senin - Kamis: 12.00 - 13.00</p>
+                                    <p class="font-bold">Jumat: 11.30 - 13.00</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col justify-center p-6 bg-satpol-blue text-white rounded-2xl shadow-lg text-center">
+                                <i class="fas fa-headset text-3xl mb-3 text-yellow-400"></i>
+                                <p class="text-xs font-black uppercase tracking-widest mb-2">Layanan SIPELAKSANA</p>
+                                <p class="text-xl font-black">24 JAM</p>
+                                <p class="text-[10px] opacity-70 mt-1 uppercase">Senin - Minggu</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+
+                        <!-- INSTAGRAM -->
+                        <a href="https://www.instagram.com/satpolppkobar?igsh=MXJ3MHdpdHN4ZHczeA==" target="_blank"
+                            class="flex items-center space-x-3 bg-white text-gray-700 px-6 py-4 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg hover:text-pink-600 transition group">
+
+                            <div
+                                class="bg-pink-100 p-3 rounded-xl group-hover:bg-pink-600 group-hover:text-white transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </div>
+
+                            <div>
+                                <p class="text-[10px] font-black uppercase text-gray-400">Instagram</p>
+                                <p class="font-bold">@satpolppkobar</p>
+                            </div>
+                        </a>
+
+                        <!-- FACEBOOK -->
+                        <a href="https://share.google/Y8bOyqxwG07mHL169" target="_blank"
+                            class="flex items-center space-x-3 bg-white text-gray-700 px-6 py-4 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg hover:text-blue-700 transition group">
+
+                            <div
+                                class="bg-blue-100 p-3 rounded-xl group-hover:bg-blue-700 group-hover:text-white transition">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </div>
+
+                            <div>
+                                <p class="text-[10px] font-black uppercase text-gray-400">Facebook</p>
+                                <p class="font-bold">@satpolppkobar</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border-8 border-white h-96">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10212.44199185449!2d111.62534065!3d-2.6953288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e0220c1a2f60241%3A0xc3f8379f85c4b8e2!2sSatpol%20PP%20Kab%20Kotawaringin%20Barat!5e0!3m2!1sid!2sid!4v1716543210987!5m2!1sid!2sid"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="bg-satpol-blue p-6 rounded-2xl text-white shadow-lg">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marked-alt text-3xl mr-6 text-yellow-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-black uppercase tracking-tight mb-2">Kantor Satuan Polisi Pamong Praja
+                                </h4>
+                                <p class="text-sm opacity-80 leading-relaxed">Jl. H.M. Rafi’i No.5, Kelurahan Madurejo,
+                                    Kecamatan Arut Selatan, Pangkalan Bun, Kabupaten Kotawaringin Barat, Kalimantan
+                                    Tengah 74112</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-satpol-blue text-white pt-20 pb-10 mt-20 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-yellow-500"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <img src="assets/images/logo.jpg.png" alt="Logo" class="h-16">
+                        <div>
+                            <h4 class="font-black text-xl uppercase leading-tight tracking-tighter">Satpol PP</h4>
+                            <p class="text-[10px] uppercase font-bold text-yellow-400 tracking-widest leading-none">
+                                Kotawaringin Barat</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-blue-200 leading-relaxed font-medium">
+                        Melayani penegakan peraturan daerah dengan tegas, profesional, dan humanis demi masyarakat yang
+                        aman dan tertib.
+                    </p>
+                    <div class="flex space-x-4 pt-4">
+                        <a href="https://www.instagram.com/satpolppkobar?igsh=MXJ3MHdpdHN4ZHczeA=="
+                            class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-yellow-500 transition"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://share.google/Y8bOyqxwG07mHL169"
+                            class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-yellow-500 transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@SatpolPPKotawaringinBarat"
+                            class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-yellow-500 transition"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h5 class="font-black text-sm uppercase mb-6 flex items-center"><span
+                                class="w-2 h-2 bg-yellow-500 mr-3"></span> Tautan Cepat</h5>
+                        <ul class="text-sm space-y-3 font-medium text-blue-200">
+                            <li><a href="#" onclick="showSection('profil')"
+                                    class="hover:text-white hover:pl-2 transition-all">Profil Satuan</a></li>
+                            <li><a href="#" onclick="showSection('produk-hukum')"
+                                    class="hover:text-white hover:pl-2 transition-all">Regulasi Daerah</a></li>
+                            <li><a href="#" onclick="showSection('berita')"
+                                    class="hover:text-white hover:pl-2 transition-all">Berita Terbaru</a></li>
+                            <li><a href="#" onclick="showSection('galeri')"
+                                    class="hover:text-white hover:pl-2 transition-all">Galeri Kegiatan</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-black text-sm uppercase mb-6 flex items-center"><span
+                                class="w-2 h-2 bg-yellow-500 mr-3"></span> Informasi Kontak</h5>
+                        <ul class="text-sm space-y-4 font-medium text-blue-200">
+                            <li class="flex items-start"><i class="fas fa-phone mr-4 mt-1 text-yellow-500"></i>
+                                0812-7324-3000</li>
+                            <li class="flex items-start"><i class="fas fa-envelope mr-4 mt-1 text-yellow-500"></i>
+                                satpolppkobar1950@gmail.com</li>
+                            <li class="flex items-start"><i class="fas fa-map-marker-alt mr-4 mt-1 text-yellow-500"></i>
+                                Pangkalan Bun, Kalimantan Tengah</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-blue-800 bg-opacity-50 p-6 rounded-3xl border border-blue-700 shadow-xl">
+                    <h5 class="font-black text-sm uppercase mb-6 flex items-center tracking-widest"><i
+                            class="fas fa-chart-line mr-3 text-yellow-400"></i> Statistik Pengunjung</h5>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-blue-900 p-3 rounded-2xl">
+                            <p class="text-[10px] uppercase font-black text-blue-400 mb-1">Hari Ini</p>
+                            <p class="text-lg font-black text-white">27</p>
+                        </div>
+                        <div class="bg-blue-900 p-3 rounded-2xl">
+                            <p class="text-[10px] uppercase font-black text-blue-400 mb-1">Bulan Ini</p>
+                            <p class="text-lg font-black text-white">214</p>
+                        </div>
+                        <div class="bg-blue-900 p-3 rounded-2xl">
+                            <p class="text-[10px] uppercase font-black text-blue-400 mb-1">Tahun Ini</p>
+                            <p class="text-lg font-black text-white">568</p>
+                        </div>
+                        <div class="bg-yellow-500 p-3 rounded-2xl">
+                            <p class="text-[10px] uppercase font-black text-satpol-blue mb-1">Total</p>
+                            <p class="text-lg font-black text-satpol-blue">568</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-800 pt-10 text-center">
+                <p class="text-xs font-bold uppercase tracking-[0.3em] text-blue-400">&copy; 2026 Satuan Polisi Pamong
+                    Praja Kabupaten Kotawaringin Barat</p>
+                <p class="text-[10px] mt-2 opacity-50 uppercase tracking-widest italic">Penegak Perda • Praja Wibawa •
+                    Abdi Masyarakat</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed FAB for Mobile Pengaduan -->
+    <a href="tel:081273243000"
+        class="fixed bottom-6 right-6 md:hidden bg-yellow-500 text-satpol-blue w-16 h-16 rounded-full shadow-2xl flex items-center justify-center z-50 border-4 border-white animate-bounce">
+        <i class="fas fa-phone-alt text-2xl"></i>
+    </a>
+
+    <script>
+        // Data Dummy untuk Konten Profil sesuai permintaan user
+        const profilData = {
+            sejarah: {
+                title: "Sejarah Satpol PP",
+                content: `
+                    <div class="prose max-w-none">
+
+    <p class="mb-4">
+        Satuan Polisi Pamong Praja (Satpol PP) merupakan perangkat pemerintah daerah yang memiliki peran strategis dalam menegakkan peraturan daerah serta menyelenggarakan ketertiban umum dan ketentraman masyarakat. Keberadaan Satpol PP tidak terlepas dari perjalanan panjang dalam sistem pemerintahan di Indonesia sejak masa awal kemerdekaan.
+    </p>
+
+    <p class="mb-4">
+        Cikal bakal Satpol PP telah ada sejak tahun 1950, yang pada saat itu dibentuk untuk membantu pemerintah daerah dalam menjaga stabilitas dan ketertiban di tengah masyarakat pasca kemerdekaan. Seiring dengan perkembangan sistem pemerintahan, pada tahun 1962 Pemerintah secara resmi membentuk Polisi Pamong Praja sebagai aparat daerah yang bertugas membantu kepala daerah dalam menyelenggarakan ketertiban umum.
+    </p>
+
+    <p class="mb-4">
+        Peran dan fungsi Satpol PP terus mengalami penguatan seiring dengan terbitnya berbagai regulasi pemerintah. Dalam Undang-Undang Nomor 23 Tahun 2014 tentang Pemerintahan Daerah, Satpol PP ditegaskan sebagai perangkat daerah yang memiliki kewenangan dalam penegakan peraturan daerah dan peraturan kepala daerah, serta penyelenggaraan ketertiban umum dan ketentraman masyarakat.
+    </p>
+
+    <p class="mb-4">
+        Selain itu, melalui Peraturan Pemerintah Nomor 16 Tahun 2018 tentang Satuan Polisi Pamong Praja, tugas dan fungsi Satpol PP semakin diperjelas, termasuk dalam hal penegakan hukum daerah secara non-yustisial, pelaksanaan kebijakan ketertiban umum, serta perlindungan masyarakat.
+    </p>
+
+    <p class="mb-4">
+        Hingga saat ini, Satpol PP terus berkembang menjadi institusi yang profesional, humanis, dan responsif dalam menjalankan tugasnya. Dalam pelaksanaan tugas di lapangan, Satpol PP tidak hanya mengedepankan penegakan hukum, tetapi juga pendekatan persuasif, edukatif, dan humanis kepada masyarakat.
+    </p>
+
+    <p>
+        Sebagai bagian dari perangkat daerah, Satpol PP memiliki komitmen untuk terus meningkatkan kualitas pelayanan kepada masyarakat serta mendukung terwujudnya ketertiban umum dan ketentraman masyarakat yang kondusif di wilayah daerah.
+    </p>
+
+</div>
+                `
+            },
+            lambang: {
+                title: "Makna Lambang",
+                content: `
+                    <div class="flex flex-col md:flex-row items-center gap-10">
+                        <img src="assets/images/logo.jpg.png" class="h-48" alt="Logo">
+                       <div class="space-y-4">
+    <p><strong class="text-satpol-blue">Perisai:</strong> Melambangkan fungsi pengayoman dalam masyarakat untuk menjaga ketertiban.</p>
+    
+    <p><strong class="text-satpol-blue">Kusuma Bangsa:</strong> Melambangkan keteladanan terhadap masyarakat dalam menegakkan kedisiplinan.</p>
+    
+    <p><strong class="text-satpol-blue">Padi (45 Butir):</strong> Melambangkan pelaksanaan kewajiban sesuai UUD 1945.</p>
+    
+    <p><strong class="text-satpol-blue">Departemen Dalam Negeri:</strong> Melambangkan pembina dan pengawas.</p>
+    
+    <p><strong class="text-satpol-blue">Bunga Kapas (7):</strong> Melambangkan perilaku dan berbicara sesuai dengan sumpah prasetya Korpri.</p>
+    
+    <p><strong class="text-satpol-blue">Praja Wibawa:</strong> Melambangkan tujuan Polisi Pamong Praja sebagai pengayom dan penegak bangsa.</p>
+    
+    <p><strong class="text-satpol-blue">Kemudi Kapal:</strong> Melambangkan tujuan untuk membantu kepala daerah menentukan arah dan berbakti pada bangsa dan negara.</p>
+    
+    <p><strong class="text-satpol-blue">1958:</strong> Melambangkan tahun lahirnya Polisi Pamong Praja.</p>
+    
+    <p><strong class="text-satpol-blue">Warna Biru:</strong> Melambangkan Indonesia yang merupakan negara dengan banyak lautan.</p>
+    
+    <p><strong class="text-satpol-blue">Warna Orange:</strong> Melambangkan penegak, pengayom, dan pengaman.</p>
+    
+    <p><strong class="text-satpol-blue">Warna Merah:</strong> Melambangkan keberanian.</p>
+    
+    <p><strong class="text-satpol-blue">Warna Putih:</strong> Melambangkan kesucian.</p>
+    
+    <p><strong class="text-satpol-blue">Warna Kuning:</strong> Melambangkan keagungan.</p>
+</div>
+                `
+            },
+            mars: {
+                title: "Mars Satpol PP",
+                content: `
+                   <div class="bg-blue-50 p-8 rounded-3xl border-2 border-dashed border-blue-200 text-center font-serif text-lg italic leading-relaxed text-satpol-blue">
+    Polisi Pamong Praja Penegak Perda<br>
+    Raga Jiwa Satria Tak Kenal Lelah<br>
+    Polisi Pamong Praja Gagah Berani<br>
+    Tunduk Taat Disiplin Berjiwa Mulia<br><br>
+
+    Ketentraman Ketertiban Selalu Di Junjung<br>
+    Aman Damai Sejahtera.. Itu Perjuangan…<br><br>
+
+    Polisi Pamong Praja Rela Berkorban<br>
+    Pengayom Masyarakat Di Cintai Rakyat<br><br>
+
+    Polisi Pamong Praja Penegak Perda<br>
+    Raga Jiwa Satria Tak Kenal Lelah<br><br>
+
+    Polisi Pamong Praja Gagah Berani<br>
+    Tunduk Taat Disiplin Berjiwa Mulia<br><br>
+
+    Ketentraman Ketertiban Selalu di Junjung<br>
+    Aman Damai Sejahtera.. Itu Perjuangan…<br><br>
+
+    Polisi Pamong Praja Rela Berkorban<br>
+    Pengayom Masyarakat Di Cintai Rakyat<br><br>
+
+    Kita Satpol PP.. Negara Sentosa<br>
+    Kita Satpol PP.. Indonesia Jaya
+</div>
+                `
+            },
+            visimisi: {
+                title: "Visi & Misi",
+                content: `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-satpol-blue text-white p-8 rounded-3xl shadow-lg">
+                            <h4 class="text-xl font-black mb-4 uppercase tracking-widest text-yellow-400">Visi</h4>
+                            <p class="text-lg leading-relaxed italic">"Kotawaringin Barat Makin Jaya"</p>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-black text-satpol-blue uppercase tracking-widest">Misi</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start"><i class="fas fa-chevron-right text-yellow-500 mt-1 mr-3"></i> Meningkatkan SDM, Unggul, Berkarakter dan Berdaya Saing.</li>
+                                <li class="flex items-start"><i class="fas fa-chevron-right text-yellow-500 mt-1 mr-3"></i> Mendorong Kemandirian Ekonomi Berbasis Kerakyatan dan Hilirisasi Potensi Daerah.</li>
+                                <li class="flex items-start"><i class="fas fa-chevron-right text-yellow-500 mt-1 mr-3"></i> Mewujudkan Keamanan Daerah dan menciptakan Stabilitas Ekonomi Melalui Penguatan Ketentraman dan Ketertiban Umum.</li>
+                                <li class="flex items-start"><i class="fas fa-chevron-right text-yellow-500 mt-1 mr-3"></i> Mewujudkan Masyarakat yang Sejahtera.</li>
+                                                                <li class="flex items-start"><i class="fas fa-chevron-right text-yellow-500 mt-1 mr-3"></i> Meningkatkan Kualitas Birokrasi melalui Tata Pemerintahan yang Bersih, Efektif, Demokratis dan Transparan Berbasis Teknologi Informasi.</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            struktur: {
+                title: "Struktur Organisasi",
+                content: `
+                    <div class="text-center">
+                        <p class="mb-8 font-bold text-gray-600 italic">Bagan Struktur Organisasi Satpol PP Kabupaten Kotawaringin Barat berdasarkan Peraturan Bupati No. 96 Tahun 2022.</p>
+                        <div class="bg-gray-100 p-4 rounded-2xl inline-block border-4 border-white shadow-inner">
+                              <img src="assets/images/baganpolos.png" alt="Bagan Struktur" class="max-w-full h-auto rounded-lg">
+                        </div>
+                        <div class="mt-8 grid md:grid-cols-3 gap-4 text-xs font-bold uppercase">
+
+                        </div>
+                    </div>
+                `
+            },
+            pancawirasatya: {
+                title: "Panca Wira Satya Polisi Pamong Praja",
+                content: `
+                    <div class="  max-w-7xl mx-auto">
+                        <ol class="space-y-6 text-gray-700 font-medium text-lg leading-relaxed list-decimal list-inside marker:text-satpol-blue marker:font-bold text-base">
+                            <li class="pl-2 border-b border-gray-100 pb-4">Kami Polisi Pamong Praja setia kepada Negara Kesatuan Republik Indonesia yang berdasarkan Pancasila dan Undang-Undang Dasar 1945.</li>
+                            <li class="pl-2 border-b border-gray-100 pb-4">Kami Polisi Pamong Praja setia kepada Pemerintahan yang sah.</li>
+                            <li class="pl-2 border-b border-gray-100 pb-4">Kami Polisi Pamong Praja adalah garda terdepan dalam menegakkan Peraturan Daerah dan Peraturan Kepala Daerah.</li>
+                            <li class="pl-2 border-b border-gray-100 pb-4">Kami Polisi Pamong Praja siap memberikan perlindungan, ketenteraman, dan ketertiban masyarakat.</li>
+                            <li class="pl-2">Kami Polisi Pamong Praja patuh dan taat dalam melaksanakan serta menegakkan peraturan perundang-undangan.</li>
+                        </ol>
+                    </div>
+                `
+            }
+        };
+
+        // Fungsi navigasi tab
+        function showSection(sectionId, subId = null) {
+            // Sembunyikan semua tab
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Tampilkan tab utama
+            const section = document.getElementById(sectionId);
+            section.classList.add('active');
+
+            // Jika ada sub-konten (Profil/Publikasi)
+            if (sectionId === 'profil' && subId) {
+                const data = profilData[subId];
+                document.getElementById('profil-content').innerHTML = `
+                    <div class="flex items-center mb-8 border-b-2 border-gray-100 pb-4">
+                        <div class="w-2 h-10 bg-yellow-500 mr-4"></div>
+                        <h3 class="text-3xl font-black text-satpol-blue uppercase tracking-tighter">${data.title}</h3>
+                    </div>
+                    <div class="text-gray-700 leading-relaxed">${data.content}</div>
+                `;
+            } else if (sectionId === 'publikasi') {
+                const title = subId === 'sop' ? 'SOP Trantibum' : 'Standar Pelayanan';
+                document.getElementById('profil-content').innerHTML = `
+                    <div class="flex items-center mb-8 border-b-2 border-gray-100 pb-4">
+                        <div class="w-2 h-10 bg-satpol-blue mr-4"></div>
+                        <h3 class="text-3xl font-black text-satpol-blue uppercase tracking-tighter">${title}</h3>
+                    </div>
+                    <p class="mb-8 text-gray-500 font-medium">Dokumen resmi standar operasional dan pelayanan Satpol PP Kotawaringin Barat dapat diakses dan diunduh di bawah ini:</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 p-8 rounded-3xl border-2 border-dashed border-blue-200 text-center flex flex-col items-center">
+                            <i class="fas fa-file-pdf text-6xl text-red-500 mb-4 shadow-sm"></i>
+                            <p class="font-black text-satpol-blue uppercase tracking-widest text-xs mb-1">Unduh Berkas</p>
+                            <p class="font-bold text-sm mb-6">${title} Lengkap (.pdf)</p>
+                            <button class="px-8 py-3 bg-satpol-blue text-white rounded-2xl font-bold hover:bg-blue-800 transition shadow-lg w-full">DOWNLOAD SEKARANG</button>
+                        </div>
+                        <div class="bg-yellow-50 p-8 rounded-3xl border-2 border-dashed border-yellow-200 flex flex-col justify-center">
+                            <h5 class="font-black text-satpol-blue mb-4 uppercase tracking-tighter">Catatan:</h5>
+                            <ul class="text-sm space-y-2 text-gray-600 italic">
+                                <li>- Dokumen ini bersifat terbuka untuk publik.</li>
+                                <li>- Gunakan sebagai acuan kepatuhan regulasi.</li>
+                                <li>- Standar ini telah sesuai dengan regulasi pusat terbaru.</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                // Pindah tampilan ke profil container (menggunakan layout profil untuk konsistensi)
+                document.getElementById('profil').classList.add('active');
+            } else if (sectionId === 'profil' && !subId) {
+                // Default ke sejarah jika klik Profil saja
+                showSection('profil', 'sejarah');
+            }
+
+            // Scroll ke atas dengan halus
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Search Produk Hukum (Sederhana)
+        document.getElementById('search-hukum')?.addEventListener('keyup', function (e) {
+            const term = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('#hukum-table-body tr');
+
+            rows.forEach(row => {
+                const text = row.cells[0].textContent.toLowerCase();
+                row.style.display = text.includes(term) ? '' : 'none';
+            });
+        });
+
+        // Initialize Sejarah as default profile view when loading
+        window.onload = () => {
+            // Pre-load default sub-sections
+        };
+
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function closeMobileMenu() {
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        function toggleSubMenu(menuId) {
+            const el = document.getElementById(menuId);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                el.classList.add('flex');
+            } else {
+                el.classList.add('hidden');
+                el.classList.remove('flex');
+            }
+        }
+    </script>
+</body>
+
+</html>
